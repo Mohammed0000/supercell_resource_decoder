@@ -3,6 +3,7 @@
 import os
 import sys
 import lzma
+import glob
 
 def process_file(path):
     basename = os.path.splitext(path)[0]
@@ -28,4 +29,10 @@ def process_file(path):
         unpack_data = lzma.decompress(tempdata)
         f.write(unpack_data)
 
-process_file(sys.argv[1])
+def process_dir(path):
+    for filename in glob.iglob(path + '/**/*.csv', recursive=True):
+        if "decoded.csv" in filename:
+            continue
+        process_file(filename)
+
+process_dir(sys.argv[1])
