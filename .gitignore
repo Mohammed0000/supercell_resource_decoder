@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Logic Code
+temp/
+*.lzma
+*.csv
+

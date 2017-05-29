@@ -8,6 +8,10 @@ You can decode the game file to human-readable csv file.
 
 1. python 3.5+
 
-## Example
+## Example decoder
 
 decoder_csv.py path/to/folder
+
+## Example encoder (experimental)
+
+./encoder_csv.py path/to/file.decoded.csv
