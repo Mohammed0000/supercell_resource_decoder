@@ -10,4 +10,8 @@ def decode_dir(path):
             continue
         decode_file(filename)
 
+if len(sys.argv) < 2:
+    print("usage app <path_to_folder>")
+    sys.exit(1)
+
 decode_dir(sys.argv[1])

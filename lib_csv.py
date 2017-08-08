@@ -26,7 +26,8 @@ def decode_file(path):
 
     try:
         with open(decodedname, 'wb') as f:
-            unpack_data = lzma.decompress(tempdata)
+            decompressor = lzma.LZMADecompressor()
+            unpack_data = decompressor.decompress(tempdata)
             f.write(unpack_data)
     except:
         print("invalid input:", path)
